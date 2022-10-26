@@ -1,2 +1,2 @@
 # App Jorge Martinez de Alegría
-Proyecto App Curso Coder (desarrollo de aplicaciones)
+Proyecto App Curso coderhouse (desarrollo de aplicaciones)
