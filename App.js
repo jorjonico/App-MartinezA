@@ -1,8 +1,21 @@
 import { StyleSheet, Text, View } from 'react-native';
 
 import { StatusBar } from 'expo-status-bar';
+import { useFonts } from 'expo-font';
 
 export default function App() {
+
+  const [fontsLoaded] = useFonts({
+    'DancingRegular': require('./src/assets/font/DancingScript-Regular.ttf'),
+    'DancingBold': require('./src/assets/font/DancingScript-Bold.ttf'),
+    'RobotoRegular': require('./src/assets/font/Roboto-Regular.ttf'),
+    'RobotoBold': require('./src/assets/font/Roboto-Bold.ttf'),
+  });
+
+  if(!fontsLoaded){
+    return null
+  }
+  
   return (
     <View style={styles.container}>
       <Text style={styles.red}>Hola, Coder!</Text>
@@ -21,7 +34,7 @@ const styles = StyleSheet.create({
   },
   red: {
     color: 'red',
-    fontWeight: 'bold',
     fontSize: 30,
+    fontFamily: 'DancingBold',
   },
 });
