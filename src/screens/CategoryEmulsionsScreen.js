@@ -1,15 +1,28 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 
 import React from 'react'
 
-const CategoryEmulsionsScreen = () => {
+const CategoryEmulsionsScreen = ({navigation}) => {
     return (
-        <View>
-        <Text>CategoryEmulsionsScreen</Text>
+        <View style={styles.container}>
+        <Text style={styles.title}>Emulsiones</Text>
+        <Button title='Ver Detalles' onPress={() => navigation.navigate('Details')}/>
         </View>
     )
 }
 
 export default CategoryEmulsionsScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container:{
+        flex: 1,
+        backgroundColor: '#DFF3E3',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    title:{
+        fontFamily: 'DancingBold',
+        color: '#86ABA1',
+        fontSize: 40,
+    },
+})
