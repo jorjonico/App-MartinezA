@@ -1,6 +1,8 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 
 import React from 'react'
+import colors from '../assets/constant/colors'
+import fontSize from '../assets/constant/fontSize'
 
 const CategoriesScreen = ({navigation}) => {
     return (
@@ -16,13 +18,13 @@ export default CategoriesScreen
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor: '#DFF3E3',
+        backgroundColor: colors.back,
         alignItems: 'center',
         justifyContent: 'center',
     },
     title:{
         fontFamily: 'DancingBold',
-        color: '#D68060',
-        fontSize: 40,
+        color: colors.secondary,
+        fontSize:fontSize.h1,
     },
 })
