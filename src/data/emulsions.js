@@ -1,0 +1,38 @@
+export const EMULSIONS = [
+    {
+        id: '1',
+        category: '1',
+        name: 'Buttery Sweet Dough',
+        description: 'Emulsión Para Repostería Gusteaus, esencia comestible sabor masa dulce especial',
+        weight: '100 ml',
+        price: 1500,
+        img: 'https://gusteausemulsions.com/ar/wp-content/uploads/2022/06/almond_knight-768x768.jpg',
+    },
+    {
+        id: '2',
+        category: '1',
+        name: 'Manteca Vainilla',
+        description: 'Emulsión Para Repostería Gusteaus, esencia comestible sabor manteca y vainilla',
+        weight: '100 ml',
+        price: 1500,
+        img: 'https://gusteausemulsions.com/ar/wp-content/uploads/2022/06/almond_knight-768x768.jpg',
+    },
+    {
+        id: '3',
+        category: '1',
+        name: 'King Smoke',
+        description: 'Emulsión Para Repostería Gusteaus, esencia comestible sabor ahumado',
+        weight: '100 ml',
+        price: 1500,
+        img: 'https://gusteausemulsions.com/ar/wp-content/uploads/2022/06/almond_knight-768x768.jpg',
+    },
+    {
+        id: '4',
+        category: '1',
+        name: 'Tamarindo',
+        description: 'Emulsión Para Repostería. Línea exclusiva de Gusteaus. El alma del pastelero',
+        weight: '100 ml',
+        price: 1500,
+        img: 'https://gusteausemulsions.com/ar/wp-content/uploads/2022/06/almond_knight-768x768.jpg',
+    },
+];

@@ -1,3 +1,5 @@
+import {COLORS, FONTSIZE} from "../assets/constant/colors";
+
 import CategoriesScreen from "../screens/CategoriesScreen";
 import CategoryEmulsionsScreen from "../screens/CategoryEmulsionsScreen";
 import EmulsionsDetailsScreen from "../screens/EmulsionsDetailsScreen";
@@ -8,8 +10,15 @@ const Stack = createNativeStackNavigator();
 export default ShopNavigator = () =>{
     return (
         <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name="Categories" component={CategoriesScreen}/>
+            <Stack.Navigator initialRouteName="Categories" screenOptions={{
+                headerStyle: {backgroundColor: COLORS.primary},
+                headerTintColor: COLORS.white,
+                headerTitleStyle: {fontSize: FONTSIZE.h3, fontFamily:'RobotoRegular',},
+                headerTitleAlign:'left',
+            }}>
+                <Stack.Screen name="Categories" component={CategoriesScreen} options={{
+                    title: 'Categorías',
+                }}/>
                 <Stack.Screen name="Emulsions" component={CategoryEmulsionsScreen}/>
                 <Stack.Screen name="Details" component={EmulsionsDetailsScreen}/>
             </Stack.Navigator>

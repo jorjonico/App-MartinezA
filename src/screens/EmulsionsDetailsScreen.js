@@ -1,8 +1,7 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
+import {COLORS, FONTSIZE} from '../assets/constant/colors'
 
 import React from 'react'
-import colors from '../assets/constant/colors'
-import fontSize from '../assets/constant/fontSize'
 
 const EmulsionsDetailsScreen = ({navigation}) => {
     return (
@@ -19,13 +18,13 @@ export default EmulsionsDetailsScreen
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor:colors.acento,
+        backgroundColor:COLORS.acento,
         alignItems: 'center',
         justifyContent: 'center',
     },
     title:{
         fontFamily: 'DancingBold',
-        color:colors.white,
-        fontSize:fontSize.h1,
+        color:COLORS.white,
+        fontSize:FONTSIZE.h1,
     },
 })
