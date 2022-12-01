@@ -13,8 +13,8 @@ export default ShopNavigator = () =>{
             <Stack.Navigator initialRouteName="Categories" screenOptions={{
                 headerStyle: {backgroundColor: COLORS.primary},
                 headerTintColor: COLORS.white,
-                headerTitleStyle: {fontSize: FONTSIZE.h3, fontFamily:'RobotoRegular',},
-                headerTitleAlign:'left',
+                headerTitleStyle: {fontSize: FONTSIZE.h4, fontFamily:'RobotoRegular',},
+                headerTitleAlign:'center',
             }}>
                 <Stack.Screen name="Categories" component={CategoriesScreen} options={{
                     title: 'Categorías',

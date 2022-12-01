@@ -9,6 +9,7 @@ export const COLORS = {
 
 export const FONTSIZE = {
     h1: 50,
-    h2: 30,
-    h3: 20,
+    h2: 40,
+    h3: 30,
+    h4: 20,
 };
