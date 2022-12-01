@@ -1,14 +1,16 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 import React from 'react'
 
 const GridItem = ({item, onSelected}) => {
     return (
         <View style={styles.gridItem}>
-            <TouchableOpacity style={{...styles.container, backgroundColor: item.color}}
+            <TouchableOpacity style={{...styles.container, backgroundColor: item.colors}}
             onPress={() => onSelected(item)}
             >
                 <View>
+                    <Image source={{uri: item.img}} 
+                    style={styles.image} />
                     <Text style={styles.title}>{item.title}</Text>
                 </View>
             </TouchableOpacity>
@@ -23,7 +25,7 @@ const styles = StyleSheet.create({
         flex: 1, 
         borderRadius: 6,
         margin: 15,
-        height: 150,
+        height: 250,
     },
     container:{
         flex: 1,
@@ -39,5 +41,10 @@ const styles = StyleSheet.create({
     },
     title:{
         fontFamily: 'RobotoRegular',
-    }
+        fontSize: 15,
+    },
+    image:{
+        width: 150, 
+        height: 220,
+    },
 });
