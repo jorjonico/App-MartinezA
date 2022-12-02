@@ -18,11 +18,11 @@ const CategoriesScreen = ({navigation}) => {
         <GridItem item={item} onSelected={handleSelectedCategory}/>
         );
 
-    const image = {uri: "https://reactjs.org/logo-og.png"};
+    const image = {uri: "https://raw.githubusercontent.com/jorjonico/App-MartinezA/main/src/assets/img/fondo.png"};
     
     return (
         <View style={styles.container}>
-            <ImageBackground style={styles.image} source={image} resizeMode="cover">
+            <ImageBackground style={styles.image} source={image} resizeMode='cover'>
                 <View style={styles.titleContainer}>
                     <Text style={styles.title}>Nuestras emulsiones</Text>
                 </View>
