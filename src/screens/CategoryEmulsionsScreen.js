@@ -53,4 +53,8 @@ const styles = StyleSheet.create({
         color: COLORS.primary,
         fontSize:FONTSIZE.h1,
     },
+    image: {
+        flex: 1,
+        justifyContent: "center",
+    },
 })
