@@ -18,13 +18,13 @@ const CategoriesScreen = ({navigation}) => {
         <GridItem item={item} onSelected={handleSelectedCategory}/>
         );
 
-    const image = {uri: "https://raw.githubusercontent.com/jorjonico/App-MartinezA/main/src/assets/img/fondo.png"};
+    const image = {uri: "https://raw.githubusercontent.com/jorjonico/App-MartinezA/main/src/assets/img/logo-og.png"};
     
     return (
         <View style={styles.container}>
             <ImageBackground style={styles.image} source={image} resizeMode='cover'>
                 <View style={styles.titleContainer}>
-                    <Text style={styles.title}>Nuestras emulsiones</Text>
+                    <Text style={styles.title}>Categorías</Text>
                 </View>
                 <FlatList 
                 data={CATEGORIES}

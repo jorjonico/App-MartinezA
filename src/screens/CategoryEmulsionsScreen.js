@@ -1,14 +1,32 @@
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { Button, FlatList, StyleSheet, Text, View } from 'react-native'
 import {COLORS, FONTSIZE} from '../assets/constant/colors'
 
+import {EMULSIONS} from '../data/emulsions'
+import EmulsionsItem from '../components/EmulsionsItem'
 import React from 'react'
 
-const CategoryEmulsionsScreen = ({navigation}) => {
+const CategoryEmulsionsScreen = ({navigation, route}) => {
+    
+    const emulsions = EMULSIONS.filter(emul => emul.category === route.params.categoryID)
+    
+    const handleSelectedCategory = (item) =>{
+        navigation.navigate('Details',{ 
+            productID: item.id,
+            name: item.name,
+        })
+    }
+
+    const renderEmulsionsItem = ({ item }) => (
+        <EmulsionsItem item={item} onSelected={handleSelectedCategory}/>
+        );
+    
     return (
-        <View style={styles.container}>
-        <Text style={styles.title}>Emulsiones</Text>
-        <Button title='Ver Detalles' onPress={() => navigation.navigate('Details')}/>
-        </View>
+        <FlatList 
+                data={emulsions}
+                keyExtractor={(item) => item.id}
+                renderItem={renderEmulsionsItem}
+                numColumns={2}
+                />
     )
 }
 

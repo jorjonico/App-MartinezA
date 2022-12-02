@@ -17,9 +17,10 @@ export default ShopNavigator = () =>{
                 headerTitleAlign:'center',
             }}>
                 <Stack.Screen name="Categories" component={CategoriesScreen} options={{
-                    title: 'Categorías',
+                    title: 'Gusteaus Emulsions',
                 }}/>
-                <Stack.Screen name="Emulsions" component={CategoryEmulsionsScreen}/>
+                <Stack.Screen name="Emulsions" component={CategoryEmulsionsScreen} 
+                options={({route}) => ({title: route.params.name})}/>
                 <Stack.Screen name="Details" component={EmulsionsDetailsScreen}/>
             </Stack.Navigator>
         </NavigationContainer>
