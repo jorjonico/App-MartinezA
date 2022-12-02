@@ -18,7 +18,7 @@ const CategoriesScreen = ({navigation}) => {
         <GridItem item={item} onSelected={handleSelectedCategory}/>
         );
 
-    const image = {uri: "https://github.com/jorjonico/App-MartinezA/blob/main/src/assets/img/fondo.png?raw=true"};
+    const image = {uri: "https://reactjs.org/logo-og.png"};
     
     return (
         <View style={styles.container}>
