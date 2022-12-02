@@ -18,7 +18,7 @@ const CategoriesScreen = ({navigation}) => {
         <GridItem item={item} onSelected={handleSelectedCategory}/>
         );
 
-    const image = {uri: "https://reactjs.org/logo-og.png"};
+    const image = {uri: "https://github.com/jorjonico/App-MartinezA/blob/main/src/assets/img/fondo.png?raw=true"};
     
     return (
         <View style={styles.container}>
@@ -56,6 +56,6 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        justifyContent: "center"
+        justifyContent: "center",
     },
 })
