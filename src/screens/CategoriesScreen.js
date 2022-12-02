@@ -1,5 +1,5 @@
 import {COLORS, FONTSIZE} from '../assets/constant/colors'
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { FlatList, ImageBackground, StyleSheet, Text, View } from 'react-native'
 
 import { CATEGORIES } from '../data/categories'
 import GridItem from '../components/GridItem'
@@ -17,18 +17,22 @@ const CategoriesScreen = ({navigation}) => {
     const renderGridItem = ({ item }) => (
         <GridItem item={item} onSelected={handleSelectedCategory}/>
         );
+
+    const image = {uri: "https://reactjs.org/logo-og.png"};
     
     return (
         <View style={styles.container}>
-            <View style={styles.titleContainer}>
-                <Text style={styles.title}>Nuestras emulsiones</Text>
-            </View>
-            <FlatList 
-            data={CATEGORIES}
-            keyExtractor={(item) => item.id}
-            renderItem={renderGridItem}
-            numColumns={2}
-            />
+            <ImageBackground style={styles.image} source={image} resizeMode="cover">
+                <View style={styles.titleContainer}>
+                    <Text style={styles.title}>Nuestras emulsiones</Text>
+                </View>
+                <FlatList 
+                data={CATEGORIES}
+                keyExtractor={(item) => item.id}
+                renderItem={renderGridItem}
+                numColumns={2}
+                />
+            </ImageBackground>
         </View>
     );
 };
@@ -49,5 +53,9 @@ const styles = StyleSheet.create({
         fontFamily: 'DancingBold',
         color: COLORS.secondary,
         fontSize:FONTSIZE.h2,
+    },
+    image: {
+        flex: 1,
+        justifyContent: "center"
     },
 })
