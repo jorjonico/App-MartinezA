@@ -1,5 +1,5 @@
-import { Button, FlatList, StyleSheet, Text, View } from 'react-native'
 import {COLORS, FONTSIZE} from '../assets/constant/colors'
+import { FlatList, ImageBackground, StyleSheet, Text, View } from 'react-native'
 
 import {EMULSIONS} from '../data/emulsions'
 import EmulsionsItem from '../components/EmulsionsItem'
@@ -19,20 +19,29 @@ const CategoryEmulsionsScreen = ({navigation, route}) => {
     const renderEmulsionsItem = ({ item }) => (
         <EmulsionsItem item={item} onSelected={handleSelectedCategory}/>
         );
-    
+        
+    const image = {uri: "https://raw.githubusercontent.com/jorjonico/App-MartinezA/main/src/assets/img/logo-og.png"};
+
     return (
-        <FlatList 
-                data={emulsions}
-                keyExtractor={(item) => item.id}
-                renderItem={renderEmulsionsItem}
-                numColumns={2}
-                />
+        <View style={styles.cardContainer}>
+            <ImageBackground style={styles.image} source={image} resizeMode='cover'>
+                <FlatList 
+                        data={emulsions}
+                        keyExtractor={(item) => item.id}
+                        renderItem={renderEmulsionsItem}
+                        />
+            </ImageBackground>
+        </View>    
     )
 }
 
 export default CategoryEmulsionsScreen
 
 const styles = StyleSheet.create({
+    cardContainer:{
+        flex: 1,
+        backgroundColor: COLORS.back,
+    },
     container:{
         flex: 1,
         backgroundColor: COLORS.back,

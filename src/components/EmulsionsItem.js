@@ -8,12 +8,11 @@ const EmulsionsItem = ({item, onSelected}) => {
         <TouchableOpacity
         onPress={() => onSelected(item)}>
             <View style={styles.emulsionsItem}>
-                <View style={styles.title}>
-                    <Text>{item.nema}</Text>
+                <View>
+                    <Text style={styles.title}>{item.name}</Text>
                 </View>
                 <View>
-                    <Text style={styles.details}>{item.price}</Text>
-                    <Text  style={styles.details}>{item.weight}</Text>
+                    <Text style={styles.details}>Precio: ${item.price}</Text>
                 </View>
             </View>
         </TouchableOpacity>
@@ -27,14 +26,14 @@ const styles = StyleSheet.create({
         padding: 20,
         margin: 10,
         borderRadius: 3,
-        backgroundColor: COLORS.gris,
+        backgroundColor: COLORS.white,
     },
     title:{
-        fontSize: 20,
+        fontSize: FONTSIZE.h3,
         fontFamily: 'DancingBold',
     },
     details:{
         fontFamily: 'RobotoRegular',
-        fontSize: FONTSIZE.h3,
+        fontSize: FONTSIZE.h4,
     },
 })
