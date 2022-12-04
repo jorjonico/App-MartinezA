@@ -11,7 +11,7 @@ const CategoriesScreen = ({navigation}) => {
         navigation.navigate('Emulsions',{ 
             categoryID: item.id,
             name: item.title,
-        })
+        });
     }
 
     const renderGridItem = ({ item }) => (

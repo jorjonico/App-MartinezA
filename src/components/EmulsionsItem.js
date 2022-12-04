@@ -1,5 +1,5 @@
 import {COLORS, FONTSIZE} from '../assets/constant/colors';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 import React from 'react'
 
@@ -9,10 +9,13 @@ const EmulsionsItem = ({item, onSelected}) => {
         onPress={() => onSelected(item)}>
             <View style={styles.emulsionsItem}>
                 <View>
-                    <Text style={styles.title}>{item.name}</Text>
+                    <Image source={{uri: item.img}} 
+                    style={styles.image} />
                 </View>
                 <View>
+                    <Text style={styles.title}>{item.name}</Text>
                     <Text style={styles.details}>Precio: ${item.price}</Text>
+                    <Text>Peso: {item.weight}</Text>
                 </View>
             </View>
         </TouchableOpacity>
@@ -23,6 +26,7 @@ export default EmulsionsItem
 
 const styles = StyleSheet.create({
     emulsionsItem:{
+        flexDirection: 'row',
         padding: 20,
         margin: 10,
         borderRadius: 3,
@@ -35,5 +39,9 @@ const styles = StyleSheet.create({
     details:{
         fontFamily: 'RobotoRegular',
         fontSize: FONTSIZE.h4,
+    },
+    image:{
+        width: 100, 
+        height: 130,
     },
 })
