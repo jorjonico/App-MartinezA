@@ -2,7 +2,7 @@ export const EMULSIONS = [
     {
         id: '1',
         category: '1',
-        name: 'Buttery Sweet Dough',
+        name: 'Sweet Dough',
         description: 'Emulsión Para Repostería Gusteaus, esencia comestible sabor masa dulce especial',
         weight: '100 ml',
         price: 1500,

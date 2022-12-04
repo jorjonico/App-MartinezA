@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     title:{
         fontSize: FONTSIZE.h3,
         fontFamily: 'DancingBold',
+        color: COLORS.secondary,
     },
     details:{
         fontFamily: 'RobotoRegular',
