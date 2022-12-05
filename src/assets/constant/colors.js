@@ -12,4 +12,5 @@ export const FONTSIZE = {
     h2: 40,
     h3: 30,
     h4: 20,
+    h5: 15,
 };

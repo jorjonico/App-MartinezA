@@ -3,13 +3,11 @@ import {COLORS, FONTSIZE} from "../assets/constant/colors";
 import CategoriesScreen from "../screens/CategoriesScreen";
 import CategoryEmulsionsScreen from "../screens/CategoryEmulsionsScreen";
 import EmulsionsDetailsScreen from "../screens/EmulsionsDetailsScreen";
-import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
 export default ShopNavigator = () =>{
     return (
-        <NavigationContainer>
             <Stack.Navigator initialRouteName="Categories" screenOptions={{
                 headerStyle: {backgroundColor: COLORS.primary},
                 headerTintColor: COLORS.white,
@@ -23,6 +21,5 @@ export default ShopNavigator = () =>{
                 <Stack.Screen name="Details" component={EmulsionsDetailsScreen}
                 options={({route}) => ({title: route.params.name})}/>
             </Stack.Navigator>
-        </NavigationContainer>
     );
 };

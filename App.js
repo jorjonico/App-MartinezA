@@ -1,4 +1,4 @@
-import ShopNavigator from './src/navigation/ShopNavigator';
+import BootomTabNavigator from './src/navigation/BottomTabNavigator';
 import { useFonts } from 'expo-font';
 
 export default function App() {
@@ -14,5 +14,5 @@ export default function App() {
     return null
   }
   
-  return <ShopNavigator />
+  return <BootomTabNavigator />
 }
