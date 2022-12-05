@@ -17,11 +17,11 @@ export default ShopNavigator = () =>{
                 headerTitleAlign:'center',
             }}>
                 <Stack.Screen name="Categories" component={CategoriesScreen} options={{
-                    title: 'Gusteaus Emulsions',
-                }}/>
+                    title: 'Gusteaus Emulsions'}}/>
                 <Stack.Screen name="Emulsions" component={CategoryEmulsionsScreen} 
                 options={({route}) => ({title: route.params.name})}/>
-                <Stack.Screen name="Details" component={EmulsionsDetailsScreen}/>
+                <Stack.Screen name="Details" component={EmulsionsDetailsScreen}
+                options={({route}) => ({title: route.params.name})}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
