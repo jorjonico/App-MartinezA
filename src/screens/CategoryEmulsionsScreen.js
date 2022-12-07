@@ -1,17 +1,29 @@
 import {COLORS, FONTSIZE} from '../assets/constant/colors'
 import { FlatList, ImageBackground, StyleSheet, Text, View } from 'react-native'
+import React, {useEffect} from 'react'
+import {connect, useDispatch, useSelector} from 'react-redux'
+import {filteredEmulsions, selectEmulsions} from "../store/actions/emulsions.action"
 
 import {EMULSIONS} from '../data/emulsions'
 import EmulsionsItem from '../components/EmulsionsItem'
-import React from 'react'
 
 const CategoryEmulsionsScreen = ({navigation, route}) => {
+    const dispatch = useDispatch()
+    const categoryEmulsions = useSelector((state) => state.emulsions.filteredEmulsions)
+    const category = useSelector((state) => state.categories.selected)
     
-    const emulsions = EMULSIONS.filter(emul => emul.category === route.params.categoryID)
+
+    useEffect(() => {
+        dispatch(filteredEmulsions(category.id));
+    }, [])
+    
+    
+    /* const emulsions = EMULSIONS.filter(emul => emul.category === route.params.categoryID) */
     
     const handleSelectedCategory = (item) =>{
+        dispatch(selectEmulsions(item.id))
+        
         navigation.navigate('Details',{ 
-            productID: item.id,
             name: item.name,
         })
     }
@@ -26,7 +38,7 @@ const CategoryEmulsionsScreen = ({navigation, route}) => {
         <View style={styles.cardContainer}>
             <ImageBackground style={styles.image} source={image} resizeMode='cover'>
                 <FlatList 
-                        data={emulsions}
+                        data={categoryEmulsions}
                         keyExtractor={(item) => item.id}
                         renderItem={renderEmulsionsItem}
                         />
@@ -35,7 +47,7 @@ const CategoryEmulsionsScreen = ({navigation, route}) => {
     )
 }
 
-export default CategoryEmulsionsScreen
+export default connect()(CategoryEmulsionsScreen);
 
 const styles = StyleSheet.create({
     cardContainer:{

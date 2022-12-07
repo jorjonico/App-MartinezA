@@ -1,6 +1,7 @@
 import BootomTabNavigator from './src/navigation/BottomTabNavigator';
+import { Provider } from 'react-redux';
+import store from './src/store';
 import { useFonts } from 'expo-font';
-
 export default function App() {
 
   const [fontsLoaded] = useFonts({
@@ -14,5 +15,9 @@ export default function App() {
     return null
   }
   
-  return <BootomTabNavigator />
+  return (
+        <Provider store={store}>
+          <BootomTabNavigator />
+        </Provider>
+        );
 }

@@ -2,8 +2,12 @@ import { Button, StyleSheet, Text, View } from 'react-native'
 import {COLORS, FONTSIZE} from '../assets/constant/colors'
 
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const EmulsionsDetailsScreen = ({navigation}) => {
+    
+    const emulsions = useSelector((state) =>state.emulsions.selected)
+    
     return (
         <View style={styles.container}>
         <Text style={styles.title}>Detalles</Text>
