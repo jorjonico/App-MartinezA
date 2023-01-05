@@ -11,8 +11,8 @@ const Categoryreducer = (state = initialState, action) => {
         case SELECTED_CATEGORY:
             const IndexCategory = state.categories.findIndex(
                 (cat) => cat.id === action.categoryID
-            )
-            if(IndexCategory === -1) return state
+            );
+            if(IndexCategory === -1) return state;
             return { ...state, selected: state.categories[IndexCategory]};
         default:
             return state;

@@ -9,8 +9,9 @@ import EmulsionsItem from '../components/EmulsionsItem'
 
 const CategoryEmulsionsScreen = ({navigation, route}) => {
     const dispatch = useDispatch()
-    const categoryEmulsions = useSelector((state) => state.emulsions.filteredEmulsions)
     const category = useSelector((state) => state.categories.selected)
+    const categoryEmulsions = useSelector((state) => state.emulsions.filteredEmulsions)
+    
     
 
     useEffect(() => {

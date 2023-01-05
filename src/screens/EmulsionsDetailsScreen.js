@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 
 const EmulsionsDetailsScreen = ({navigation}) => {
     
-    const emulsions = useSelector((state) =>state.emulsions.selected)
+    const emulsions = useSelector((state) => state.emulsions.selected)
     
     return (
         <View style={styles.container}>
