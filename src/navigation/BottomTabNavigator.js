@@ -4,6 +4,7 @@ import {COLORS} from '../assets/constant/colors';
 import CartNavigator from './CartNavigator';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { NavigationContainer } from "@react-navigation/native";
+import OrderNavigator from './OrderNavigator';
 import ShopNavigator from './ShopNavigator';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -34,6 +35,17 @@ export default BootomTabNavigator = () => {
                         <View style={styles.item}>
                             <Ionicons name='ios-cart-outline' size={25} color={COLORS.white}/>
                             <Text style={styles.textIcon}>Carrito</Text>
+                        </View>
+                    )
+                }}/>
+                <BootomTabs.Screen
+                    name='OrdersTab'
+                    component={OrderNavigator}
+                    options={{
+                    tabBarIcon: ({focus}) =>(
+                        <View style={styles.item}>
+                            <Ionicons name='list' size={25} color={COLORS.white}/>
+                            <Text style={styles.textIcon}>Ordenes</Text>
                         </View>
                     )
                 }}/>
