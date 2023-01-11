@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import {COLORS} from '../assets/constant/colors';
 import CartNavigator from './CartNavigator';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { NavigationContainer } from "@react-navigation/native";
 import OrderNavigator from './OrderNavigator';
 import ShopNavigator from './ShopNavigator';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -12,7 +11,6 @@ const BootomTabs = createBottomTabNavigator();
 
 export default BootomTabNavigator = () => {
     return (
-        <NavigationContainer>
             <BootomTabs.Navigator 
             initialRouteName='ShopTab'
             screenOptions={{
@@ -50,7 +48,6 @@ export default BootomTabNavigator = () => {
                     )
                 }}/>
             </BootomTabs.Navigator>
-        </NavigationContainer>
     );
 };
 

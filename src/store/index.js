@@ -1,5 +1,6 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 
+import AuthReducer from "./reducers/auth.reducer";
 import CartReducer from "./reducers/cart.reducer";
 import Categoryreducer from "./reducers/category.reducer";
 import EmulsionsReducer from "./reducers/emulsions.reducer";
@@ -11,6 +12,7 @@ const RootReducer = combineReducers({
     emulsions: EmulsionsReducer,
     cart: CartReducer,
     orders: OrderReducer,
+    auth: AuthReducer,
 });
 
 export default createStore(RootReducer, applyMiddleware(thunk));

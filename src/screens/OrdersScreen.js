@@ -17,9 +17,9 @@ const OrdersScreen = () => {
         console.log('Eliminar');
     };
     
-    const renderItem = ({item}) => {
-        <OrderItem  item={item} onDelete={handleDalateItem}/>;
-    };
+    const renderItem = ({item}) => (
+        <OrderItem  item={item} onDelete={handleDalateItem}/>
+    );
     
     return (
         <View style={styles.container}>
