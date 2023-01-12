@@ -1,6 +1,7 @@
 import {COLORS, FONTSIZE} from "../assets/constant/colors";
 
 import OrdersScreen from "../screens/OrdersScreen";
+import PhotoScreen from '../screens/PhotoScreen';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
@@ -17,6 +18,11 @@ export default ShopNavigator = () =>{
                     component={OrdersScreen}
                     options={{
                     title: 'Ordenes'}}/>
+                <Stack.Screen 
+                    name="Foto"
+                    component={PhotoScreen}
+                    options={{
+                    title: 'Tomar una Foto'}}/>
                 </Stack.Navigator>
     );
 };

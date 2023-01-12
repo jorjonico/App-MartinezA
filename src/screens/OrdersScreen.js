@@ -36,7 +36,7 @@ const OrdersScreen = ({navigation}) => {
                 />
             </View>
             <View>
-                <TouchableOpacity style={styles.boton} onPress={handlePhoto}>
+                <TouchableOpacity style={styles.boton} onPress={() => navigation.navigate('Foto')}>
                     <Text style={styles.text}>Tomar foto</Text>
                 </TouchableOpacity>
             </View>

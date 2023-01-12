@@ -1,5 +1,5 @@
-import { Button, Image, StyleSheet, Text, View } from 'react-native'
 import {COLORS, FONTSIZE} from '../assets/constant/colors'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 
 import React from 'react'
@@ -21,10 +21,13 @@ const EmulsionsDetailsScreen = ({navigation}) => {
                     <Text style={styles.description}>{emulsion.description}</Text>
                     <Text style={styles.price}>Precio: ${emulsion.price}</Text>
                     <View style={styles.button}>
-                        <Button title="Agregar al Carrito" onPress={handleAddItemCart}/>
-                        
+                        <TouchableOpacity style={styles.boton} onPress={handleAddItemCart}>
+                        <Text style={styles.text}>Agregar al Carrito</Text>
+                        </TouchableOpacity>
                     </View>
-                    <Button title='Categorías' onPress={() => navigation.popToTop()}/>
+                    <TouchableOpacity style={styles.boton} onPress={() => navigation.popToTop()}>
+                        <Text style={styles.text}>Volver a Categorías</Text>
+                    </TouchableOpacity>
             </View>
         </View>
     )
@@ -61,11 +64,26 @@ const styles = StyleSheet.create({
     button:{
         flexDirection: 'row',
         justifyContent: 'space-evenly',
-        marginTop: 15,
+        marginTop: 10,
         padding: 10,
     },
     image:{
-        width: 250, 
-        height: 280,
+        width: 220, 
+        height: 250,
     },
+    boton: {
+        backgroundColor: COLORS.secondary,
+        marginTop: 5,
+        borderRadius: 10,
+        padding: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    text: {
+        fontFamily: 'RobotoRegular',
+        fontSize: FONTSIZE.h5,
+        textAlign:'center',
+        color:COLORS.white,
+    }
 })
